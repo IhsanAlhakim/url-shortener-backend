@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 dotenv.config();
 const PORT = process.env.PORT;
-const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTiON_STRING || "";
+const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTiON_STRING!;
 
 mongoose
   .connect(MONGO_CONNECTION_STRING)
