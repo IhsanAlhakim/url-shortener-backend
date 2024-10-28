@@ -5,13 +5,6 @@ import mongoose, { ConnectOptions } from "mongoose";
 const PORT = process.env.PORT;
 const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "";
 
-if (
-  !MONGO_CONNECTION_STRING.startsWith("mongodb://") &&
-  !MONGO_CONNECTION_STRING.startsWith("mongodb+srv://")
-) {
-  throw new Error("Invalid MongoDB connection string.");
-}
-
 mongoose
   .connect(MONGO_CONNECTION_STRING, {
     useNewUrlParser: true,
