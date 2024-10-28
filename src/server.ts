@@ -6,6 +6,8 @@ dotenv.config();
 const PORT = process.env.PORT;
 const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTiON_STRING || "";
 
+console.log("Connection String:", MONGO_CONNECTION_STRING);
+
 if (
   !MONGO_CONNECTION_STRING.startsWith("mongodb://") &&
   !MONGO_CONNECTION_STRING.startsWith("mongodb+srv://")
