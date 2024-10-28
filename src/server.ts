@@ -1,12 +1,9 @@
-import dotenv from "dotenv";
+require("dotenv").config();
 import app from "./app";
 import mongoose, { ConnectOptions } from "mongoose";
 
-dotenv.config();
 const PORT = process.env.PORT;
-const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTiON_STRING || "";
-
-console.log("Connection String:", MONGO_CONNECTION_STRING);
+const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "";
 
 if (
   !MONGO_CONNECTION_STRING.startsWith("mongodb://") &&
