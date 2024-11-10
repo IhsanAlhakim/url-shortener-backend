@@ -26,6 +26,7 @@ export const shortenUrl: RequestHandler<
     const urlData = await UrlModel.findOne({ oriUrl: oriUrl });
 
     if (urlData) {
+      console.log("URL already shortened");
       res.status(200).json(urlData);
       return;
     }
@@ -37,6 +38,7 @@ export const shortenUrl: RequestHandler<
       oriUrl: oriUrl,
       shortUrl: shortUrl,
     });
+    console.log("URL shortened");
     res.status(201).json(newShortenUrl);
   } catch (error) {
     next(error);
