@@ -6,10 +6,7 @@ const PORT = process.env.PORT;
 const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "";
 
 mongoose
-  .connect(MONGO_CONNECTION_STRING, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  } as ConnectOptions)
+  .connect(MONGO_CONNECTION_STRING)
   .then(() => {
     console.log("Mongoose Connected");
     app.listen(PORT, () => {
